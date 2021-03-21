@@ -1,0 +1,30 @@
+@charset "EUC-KR";
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color:black;
+}
+.center{
+
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-160px;
+	margin-top:-150px;
+	
+}
+.moon{
+	background-image:url("css/moon.jpg");
+	filter:brightness(50%);
+	width:360px;
+	height:300px;
+	transition:all ease 2s 0s;
+	
+}
+.moon:hover{
+	transform:scale(1.5,1.5);
+	filter:brightness(100%);
+	
+
+}

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.header{
+	background-color:pink;
+	float:right;
+}
+#spring{
+	width:100%;
+	height:480px;
+	background-color:green;
+	float:left;
+	background-image: url('spring.jpg');
+	background-repeat : no-repeat;
+	backgroudn-sizw:100%;
+	
+}
+#summer{
+	width:100%;
+	height:480px;
+	background-color:red;
+	float:left;
+	
+}
+#fall{
+	width:100%;
+	height:480px;
+	background-color:brown;
+	float:left;
+	
+}
+#winter{
+	width:100%;
+	height:480px;
+	background-color:blue;
+	float:left;
+	
+}
