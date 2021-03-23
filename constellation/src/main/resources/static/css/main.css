@@ -14,17 +14,21 @@ body{
 	margin-top:-150px;
 	
 }
-.moon{
-	background-image:url("css/moon.jpg");
+#moon{
+	
 	filter:brightness(50%);
 	width:360px;
 	height:300px;
 	transition:all ease 2s 0s;
 	
 }
-.moon:hover{
+#moon:hover{
 	transform:scale(1.5,1.5);
 	filter:brightness(100%);
-	
 
+
+}
+#moon:focus{
+	border:none;
+	outline:none;
 }
