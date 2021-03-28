@@ -15,4 +15,4 @@ public class ConstellationController {
 	public String SelectWeather() {
 		return "selectweather";
 	}
-}
+

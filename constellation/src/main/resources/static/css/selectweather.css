@@ -1,36 +1,80 @@
 @charset "UTF-8";
-.header{
-	background-color:pink;
-	float:right;
+
+@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-#spring{
-	width:100%;
-	height:480px;
-	background-color:green;
-	float:left;
-	background-image: url('spring.jpg');
-	background-repeat : no-repeat;
-	backgroudn-sizw:100%;
+
+body,html{
+	height:100%;
+	margin:0;
+	font-size:2em;
+	color:#9a9a9a;
+	font-family:"Chosunilbo_myungjo";
+	
 	
 }
-#summer{
-	width:100%;
-	height:480px;
-	background-color:red;
-	float:left;
+
+	.banner
+	{	filter:grayscale(100%);
+		overflow:hidden;
+		width:25%;
+		height:100%;
+		background-size:cover;
+		background-position:center;
+		position:relative;/*가장 기준이 되는 요소일때 슴*/
+		display:inline-block;/*안쪽 컨텐츠에 맞춘 블록*/
+		float:left;
+	}
+	.banner img{
+		margin-left:-50%;
+		height:100%;
+
+	}
+	.banner:hover{
+	filter:grayscale(0%);}
+	.banner span.text{
+		position:absolute;/*위로 뛰움*/
+		top:50%;
+		left:0;
+		transform:translateY(-50%);
+		display:none;
+		width:100%;
+		font-size:70px;
+		color:#fff;
+		font-weight:900; /*폰트두께*/
+		text-align:center;
+	}
+	.banner:before, .banner:after{
+		content:''; /*가상요소 필수값*/
+		position:absolute;/*레이어 형태처럼 위로 뛰울수 있음*/
+		top:50%;
+		left:50%;
+		width:95%;
+		height:95%;
+		transform:translate(-50%,-50%);
+		transition:all .8s;
+	}
 	
-}
-#fall{
-	width:100%;
-	height:480px;
-	background-color:brown;
-	float:left;
+	.banner:before{
+	border-top:2px solid #fff;
+	border-bottom:2px solid #fff;
+	width:0;
+	}
 	
-}
-#winter{
-	width:100%;
-	height:480px;
-	background-color:blue;
-	float:left;
+	.banner:after{
+	border-left:2px solid #fff;
+	border-right:2px solid #fff;
+	height:0;}
 	
-}
+	.banner:hover span.text{
+	display:block;}
+	.banner:hover:before{width:95%;}
+	.banner:hover:after{height:95%;}
+
+
+
+
+
