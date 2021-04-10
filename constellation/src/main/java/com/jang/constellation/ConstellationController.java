@@ -15,4 +15,8 @@ public class ConstellationController {
 	public String SelectWeather() {
 		return "selectweather";
 	}
-
+	@RequestMapping(value="/spring_constellation")
+	public String Spring_constellation() {
+		return "spring_constellation";
+	}
+}
