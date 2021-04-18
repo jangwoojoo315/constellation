@@ -12,7 +12,21 @@ body{
 	background-position:center center;
 	overflow:hidden;
 }
-.spring_star #lion{
+.spring_star:hover {
+	opacity:1;
+	transform:scale(1.1);
+	transition:.5s;
+}
+#little_lion{
+	width:10%;
+	height:10%;
+	margin-left:10%;
+	margin-top:10%;
+	opacity:0.5;
+	border:1px solid red;
+	
+}
+#lion{
 	width:10%;
 	height:10%;
 	margin-left:20%;
@@ -22,11 +36,16 @@ body{
 	
 }
 
-.spring_star #lion:hover {
-	opacity:1;
-	transform:scale(1.1);
-	transition:.5s;
+#herdsman{
+	width:10%;
+	height:10%;
+	margin-left:10%;
+	margin-top:15%;
+	opacity:0.5;
+	border:1px solid red;
 }
+
+
 .popup .overlay {
   position:fixed;
   top:0px;
