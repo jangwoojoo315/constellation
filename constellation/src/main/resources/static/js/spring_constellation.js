@@ -20,7 +20,6 @@ window.onload=function(){
 		  document.getElementById("popup-1").classList.toggle("active");
 		  
 		  var url='/selectmemberlist/'+name;
-		  alert(url);
 		  fetch(url).then(function(response){
 			  response.json().then(function(json){
 				  

@@ -12,7 +12,7 @@ body{
 	background-position:center center;
 	overflow:hidden;
 }
-.spring_star:hover {
+.spring_star:hover{
 	opacity:1;
 	transform:scale(1.1);
 	transition:.5s;
@@ -20,32 +20,78 @@ body{
 #little_lion{
 	width:10%;
 	height:10%;
-	margin-left:10%;
-	margin-top:10%;
+	position:relative;
+	left:300px;
+	top:50px;
 	opacity:0.5;
-	border:1px solid red;
 	
 }
 #lion{
 	width:10%;
 	height:10%;
-	margin-left:20%;
-	margin-top:30%;
+	position:relative;
+	left:150px;
+	top:250px;
 	opacity:0.5;
-	border:1px solid red;
 	
 }
 
 #herdsman{
 	width:10%;
 	height:10%;
-	margin-left:10%;
-	margin-top:15%;
+	position:relative;
+	left:450px;
+	top:50px;
 	opacity:0.5;
-	border:1px solid red;
 }
-
-
+#women{
+	width:10%;
+	height:10%;
+	position:relative;
+	left:50px;
+	top:150px;
+	opacity:0.5;
+}
+#libra{
+	width:10%;
+	height:10%;
+	position:relative;
+	left:300px;
+	top:450px;
+	opacity:0.5;
+}
+#corona{
+	width:10%;
+	height:10%;
+	position:relative;
+	left:150px;
+	top:250px;
+	opacity:0.5;
+}
+#hydra{
+	width:10%;
+	height:10%;
+	position:relative;
+	left:150px;
+	top:350px;
+	opacity:0.5;
+}
+#coma{
+	width:10%;
+	height:10%;
+	position:relative;
+	left:80px;
+	top:350px;
+	opacity:0.5;
+}
+#corvus{
+	width:10%;
+	height:10%;
+	position:relative;
+	left:20px;
+	top:10px;
+	opacity:0.5;
+}
 .popup .overlay {
   position:fixed;
   top:0px;
@@ -112,10 +158,10 @@ button {
 }
 #logo {
 	width:200px;
-	heightL:150px;
+	height:150px;
 	object-fit:cover;
 	border-radius:10%;
-	overflow:hidden;
+	
 }  
 .div12{
 	position:absolute;
