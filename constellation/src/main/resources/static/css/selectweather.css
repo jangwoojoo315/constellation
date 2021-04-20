@@ -27,6 +27,7 @@ body,html{
 		position:relative;/*가장 기준이 되는 요소일때 슴*/
 		display:inline-block;/*안쪽 컨텐츠에 맞춘 블록*/
 		float:left;
+		cursor:pointer;
 	}
 	.banner img{
 		margin-left:-50%;

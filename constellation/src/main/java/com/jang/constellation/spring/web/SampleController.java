@@ -31,5 +31,9 @@ public class SampleController {
 	public String Spring_constellation() {
 		return "spring_constellation";
 	}
+	@RequestMapping(value="/summer_constellation")
+	public String Summer_constellation() {
+		return "summer_constellation";
+	}
 }
 	
