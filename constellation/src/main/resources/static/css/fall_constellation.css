@@ -12,12 +12,12 @@ body{
 	background-position:center center;
 	overflow:hidden;
 }
-.summer_star:hover{
+.fall_star:hover{
 	opacity:1;
 	transform:scale(1.1);
 	transition:.5s;
 }
-#lyra{
+#pegasus{
 	width:10%;
 	height:10%;
 	position:relative;
@@ -26,7 +26,7 @@ body{
 	opacity:0.5;
 	
 }
-#aquila{
+#perseus{
 	width:10%;
 	height:10%;
 	position:relative;
@@ -36,7 +36,7 @@ body{
 	
 }
 
-#cygnus{
+#aries{
 	width:10%;
 	height:10%;
 	position:relative;
@@ -44,7 +44,7 @@ body{
 	top:50px;
 	opacity:0.5;
 }
-#sagitta{
+#equ{
 	width:10%;
 	height:10%;
 	position:relative;
@@ -52,7 +52,7 @@ body{
 	top:150px;
 	opacity:0.5;
 }
-#delphinus{
+#aquarius{
 	width:10%;
 	height:10%;
 	position:relative;
@@ -60,30 +60,7 @@ body{
 	top:450px;
 	opacity:0.5;
 }
-#hercules{
-	width:10%;
-	height:10%;
-	position:relative;
-	left:150px;
-	top:250px;
-	opacity:0.5;
-}
-#sagittarius{
-	width:10%;
-	height:10%;
-	position:relative;
-	left:150px;
-	top:350px;
-	opacity:0.5;
-}
-#scorpius{
-	width:10%;
-	height:10%;
-	position:relative;
-	left:80px;
-	top:350px;
-	opacity:0.5;
-}
+
 
 .popup .overlay {
   position:fixed;
