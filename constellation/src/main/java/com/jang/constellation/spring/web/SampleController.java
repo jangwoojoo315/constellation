@@ -39,5 +39,9 @@ public class SampleController {
 	public String Fall_constellation() {
 		return "fall_constellation";
 	}
+	@RequestMapping(value="/winter_constellation")
+	public String Winter_constellation() {
+		return "winter_constellation";
+	}
 }
 	
