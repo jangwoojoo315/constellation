@@ -5,6 +5,30 @@ body{
     padding: 0;
     background-color:black;
 }
+.top{
+	margin-top:20px;
+	display:inline-block;
+	float:right;
+	
+}
+#user{
+	width:30px;
+	height:30px;
+	padding-right:10px;
+	filter:brightness(50%);
+}
+#user:hover{
+	filter:brightness(100%);
+}
+#menu{
+	width:30px;
+	height:30px;
+	padding-right:10px;
+	filter:brightness(50%);
+}
+#menu:hover{
+	filter:brightness(100%);
+}
 .center{
 
 	position:fixed;
@@ -14,6 +38,7 @@ body{
 	margin-top:-150px;
 	
 }
+
 #moon{
 	
 	filter:brightness(50%);

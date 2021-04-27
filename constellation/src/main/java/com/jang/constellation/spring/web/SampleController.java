@@ -43,5 +43,9 @@ public class SampleController {
 	public String Winter_constellation() {
 		return "winter_constellation";
 	}
+	@RequestMapping(value="/shopping")
+	public String Shopping() {
+		return "shopping";
+	}
 }
 	
