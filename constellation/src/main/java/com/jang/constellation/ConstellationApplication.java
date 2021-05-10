@@ -32,8 +32,9 @@ public class ConstellationApplication {
         
         return sessionFactory.getObject();
     }
+
     @Bean
-    public BCryptPasswordEncoder BCryptPasswordEncoder(){
+    public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
 }

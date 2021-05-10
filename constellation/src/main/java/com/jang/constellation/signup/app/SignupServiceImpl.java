@@ -24,9 +24,9 @@ public class SignupServiceImpl implements SignupService{
 	public void signup(MemberVO vo) throws Exception {
 		 String inputPass = vo.getUserPass();
 		 
-		 String pass = passEncoder.encode(inputPass);
-		 System.out.println(pass);
-		 vo.setUserPass(pass);
+//		 String pass = passEncoder.encode(inputPass);
+//		 System.out.println(pass);
+//		 vo.setUserPass(pass);
 		signupMapper.signup(vo);
 	}
 	
