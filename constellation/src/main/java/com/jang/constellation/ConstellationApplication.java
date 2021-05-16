@@ -15,7 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-//@MapperScan(value={"com.jang.constellation.spring.dao"})
+//@MapperScan(value={"com.jang.constellation.spring.dao"})ㅣ
 @EnableAutoConfiguration(exclude= {SecurityAutoConfiguration.class})
 public class ConstellationApplication {
 
