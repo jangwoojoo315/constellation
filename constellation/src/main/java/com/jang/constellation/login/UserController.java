@@ -17,6 +17,10 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class UserController {
 	private final UserService userService;
+	@RequestMapping(value="/main")
+	public String Main(){
+		return "/login/main";
+	}
 	@RequestMapping(value="/login")
 	public String Main_login(){
 		return "/login/login";

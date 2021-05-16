@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	public void configure(WebSecurity web) throws Exception{
 		//인증을 무시하기 위한 설정
-		web.ignoring().antMatchers("/css/**","/js/**","/img/**","/lib/**","/h2-console/**");
+		web.ignoring().antMatchers("/css/**","/js/**","/img/**","/lib/**");
 	}
 	 @Override
 	  protected void configure(HttpSecurity http) throws Exception { 
@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	        .and() 
 	          .formLogin() // 7
 	            .loginPage("/login") // 로그인 페이지 링크
-	            .defaultSuccessUrl("/") // 로그인 성공 후 리다이렉트 주소
+	            .defaultSuccessUrl("/main") // 로그인 성공 후 리다이렉트 주소
 	        .and()
 	          .logout() // 8
 	            .logoutSuccessUrl("/login") // 로그아웃 성공시 리다이렉트 주소

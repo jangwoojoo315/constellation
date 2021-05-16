@@ -34,8 +34,9 @@ public class UserService implements UserDetailsService {
 	  }
 
 @Override
-public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-	// TODO Auto-generated method stub
-	return null;
+public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+	// 시큐리티에서 지정한 서비스이기 때문에 이 메소드를 필수로 구현
+    return userRepository.findByEmail(email)
+        .orElseThrow(() -> new UsernameNotFoundException((email)));
 }	
 }
