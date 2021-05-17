@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	
+
   
   var animating = false,
       submitPhase1 = 1100,
@@ -6,7 +8,7 @@ $(document).ready(function() {
       logoutPhase1 = 800,
       $login = $(".login"),
       $app = $(".app");
-  
+  		
   function ripple(elem, e) {
     $(".ripple").remove();
     var elTop = elem.offset().top,

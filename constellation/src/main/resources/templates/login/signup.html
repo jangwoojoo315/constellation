@@ -3,18 +3,132 @@
   <head>
     <meta charset="UTF-8">
     <title>sign up</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="/css/signup/signup.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="/js/signup/signup.js"></script>
   </head>
   <body>
-    <h1>Sign Up</h1> <hr>
+<div class="container" id="container1">
 
-    <form th:action="@{/user}" method="POST">
-      email : <input type="text" name="email"> <br>
-      password : <input type="password" name="password"> <br>
-      <input type="radio" name="auth" value="ROLE_ADMIN,ROLE_USER"> admin
-      <input type="radio" name="auth" value="ROLE_USER" checked="checked"> user <br>
-      <button type="submit">Join</button>
-    </form> <br>
+    <div class="login-signup">
+      <div class="row">
+        <div class="col-sm-6 nav-tab-holder">
+        <ul class="nav nav-tabs row" role="tablist">
+        
+          <li role="presentation" class="active col-sm-6"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Admin</a></li>
+          <li role="presentation" class="col-sm-6"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">User</a></li>
+        </ul>
+      </div>
+		
+      </div>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <div class="row">
 
-    <a href="/login">Go to login →</a>
+            <div class="col-sm-6 mobile-pull">
+              <article role="login">
+                <h3 class="text-center"><i class="fa fa-lock"></i>Create Admin Account</h3>
+                <form class="signup" action="index.html" method="post">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="UserName">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Phone Number">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Confirm Password">
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Please accept the terms and conditions to proceed with your request.
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-block"  value="SUBMIT">
+                  </div>
+                </form>
+
+                <footer role="signup" class="text-center">
+                  <ul>
+                    <li>
+                      <a href="#">Terms of Use</a>
+                    </li>
+                    <li>
+                      <a href="#">Privacy Statement</a>
+                    </li>
+                  </ul>
+                </footer>
+
+              </article>
+            </div>
+
+          </div>
+          <!-- end of row -->
+        </div>
+        <!-- end of home -->
+
+      <div role="tabpanel" class="tab-pane" id="profile">
+        <div class="row">
+
+          <div class="col-sm-6 mobile-pull">
+            <article role="login">
+              <h3 class="text-center"><i class="fa fa-lock"></i> Create User Account</h3>
+              <form class="signup" action="index.html" method="post">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="UserName">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email Address">
+                </div>
+         
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Confirm Password">
+                </div>
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Please accept the terms and conditions to proceed with your request.
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success btn-block"  value="SUBMIT">
+                </div>
+              </form>
+              <footer role="signup" class="text-center">
+                <ul>
+                  <li>
+                    <a href="#">Terms of Use</a>
+                  </li>
+                  <li>
+                    <a href="#">Privacy Statement</a>
+                  </li>
+                </ul>
+              </footer>
+
+            </article>
+          </div>
+
+        </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/loginmain.js"></script>
   </body>
 </html>
