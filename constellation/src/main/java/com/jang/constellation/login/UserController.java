@@ -33,11 +33,13 @@ public class UserController {
 	public String Signup(){
 		return "/login/signup";
 	}
-	@PostMapping("/user")
+	@PostMapping(value="/user")
 	public RedirectView signup(UserInfoDto infoDto) {
+		System.out.print("111");
 		//회원추가
 		userService.save(infoDto);
 		return new RedirectView("/login");
+
 	}
   // 추가
 	  @GetMapping(value = "/logout")

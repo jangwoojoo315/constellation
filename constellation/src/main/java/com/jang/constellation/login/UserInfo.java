@@ -29,7 +29,11 @@ public class UserInfo implements UserDetails {
   @Column(name = "code")
   @GeneratedValue(strategy= GenerationType.IDENTITY)
   private Long code;
-
+  @Column(name = "id")
+  private String id;
+  @Column(name = "name")
+  private String name;
+  
   @Column(name = "email", unique = true)
   private String email;
 
@@ -40,11 +44,14 @@ public class UserInfo implements UserDetails {
   private String auth;
 
   @Builder
-  public UserInfo(String email, String password, String auth) {
+  public UserInfo(String name,String email,String id, String password, String auth) {
+	Assert.hasText(name,"name mmust not be empty"); 
+	Assert.hasText(id,"id mmust not be empty"); 
 	Assert.hasText(email,"email mmust not be empty");  
 	Assert.hasText(password,"password mmust not be empty");  
 	Assert.hasText(auth,"auth mmust not be empty");  
-	  
+	this.name=name;
+	this.id=id;
     this.email = email;
     this.password = password;
     this.auth = auth;

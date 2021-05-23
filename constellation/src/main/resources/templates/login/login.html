@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
   	<title>Login 10</title>
 
@@ -9,7 +9,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="/css/signup/signup.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">	
 	<link rel="stylesheet" href="css/style.css">
 
 	</head>
@@ -58,19 +60,135 @@
 	          <!-- 
 	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
 	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a> -->
-	          	<a href="/signup" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> SignUp</a>
-
+	          	<a href="#" class="px-2 py-2 ml-md-1 rounded" id="signup_btn" onclick="document.getElementById('profile').style.display='inline'"><span class="ion-logo-twitter mr-2"></span> SignUp</a>
+				
 	          </div>
 		      </div>
 				</div>
 			</div>
 		</div>
 	</section>
+      <div role="tabpanel" class="tab-pane" id="profile" style="position:absolute; left:100px; top:50px; width:800px; height:500px; z-index:1;display:none;">
+        <div class="row">
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/loginmain.js"></script>
+          <div class="col-sm-6 mobile-pull">
+            <article role="login">
+              <h3 class="text-center"><i class="fa fa-lock"></i> Create User Account</h3>
+              <form action="/user" class="signup"  method="POST">
+               <input type="radio" name="auth" value="ROLE_USER" checked="checked" style="display:none;">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="userName" placeholder="UserName" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="userAddress" placeholder="Email Address" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="userId" placeholder="UserId" required="required">
+                </div>         
+                <div class="form-group">
+                  <input type="password" class="form-control" id="userPass" placeholder="Password" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Confirm Password" required="required">
+                </div>
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" required="required"> Please accept the terms and conditions to proceed with your request.
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success btn-block"  id="submit_btn" value="SUBMIT">
+                  <input type="button" class="btn btn-success btn-block" id="cancel_btn" value="CANCEL">
+                </div>
+              </form>
+              <footer role="signup" class="text-center">
+              </footer>
+
+            </article>
+          </div>
+
+        </div>
+      </div>	
+	
+	
+<!-- 회원가입 폼 -->
+<div class="container" id="container1"  style="position:absolute; left:100px; top:50px; width:800px; height:500px; z-index:1;display:none;">
+
+    <div class="login-signup">
+      	<div class="row">
+        <div class="col-sm-6 nav-tab-holder">
+        <ul class="nav nav-tabs row" role="tablist">
+        <!-- 관리자 회원가입 폼 
+          <li role="presentation" class="active col-sm-6"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Admin</a></li>
+          -->
+          <li role="presentation" class="col-sm-6"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">User</a></li>
+        
+        </ul>
+      </div>
+		
+      </div>
+      <div class="tab-content">
+
+      <!-- 관리자 회원가입 폼 
+        <div role="tabpanel" class="tab-pane active" id="home" > 
+          <div class="row">
+
+            <div class="col-sm-6 mobile-pull">
+              <article role="login">
+                <h3 class="text-center"><i class="fa fa-lock"></i>Create Admin Account</h3>
+                <form class="signup" action="index.html" method="post">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="UserName">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Phone Number">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Confirm Password">
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Please accept the terms and conditions to proceed with your request.
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-block"  value="SUBMIT">
+                  </div>
+                </form>
+
+                <footer role="signup" class="text-center">
+                </footer>
+
+              </article>
+            </div>
+
+          </div>
+          
+        </div>
+        
+		-->
+
+  </div>
+  </div>
+  </div>
+
+
+
+<script src="/js/login/login.js"></script>
+	<script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/loginmain.js"></script>
 
 	</body>
 </html>

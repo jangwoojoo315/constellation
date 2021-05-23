@@ -28,8 +28,10 @@ public class UserService implements UserDetailsService {
 	    infoDto.setPassword(encoder.encode(infoDto.getPassword()));
 
 	    return userRepository.save(UserInfo.builder()
-	        .email(infoDto.getEmail())
-	        .auth(infoDto.getAuth())
+	    	.name(infoDto.getName())
+	    	.email(infoDto.getEmail())
+	    	.auth(infoDto.getAuth())
+	    	.id(infoDto.getId())
 	        .password(infoDto.getPassword()).build()).getCode();
 	  }
 

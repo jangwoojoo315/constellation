@@ -1,5 +1,6 @@
 @charset "EUC-KR";
 
+
 .login-signup {
   padding: 0 0 25px;
 }
@@ -29,7 +30,7 @@ ul {
 }
 
 article[role="login"] {
-  background: #fff;
+  background: #a4a4a4;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
   webkit-transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -53,7 +54,7 @@ article[role="login"]:hover {
 article[role="login"] h3 {
   font-size: 26px;
   font-weight: 300;
-  color: #23bab5;
+  color: #167876;
   margin-bottom: 20px;
 }
 
