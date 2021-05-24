@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
   	<title>Login 10</title>
 
-    <meta charset="utf-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
@@ -31,12 +31,13 @@
 		      	<form action="/login" class="signin-form" method="post">
 		      	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 		      		<div class="form-group">
-		      			<input type="text" class="form-control" name="username" placeholder="Username" required>
+		      			<input type="text" class="form-control" name="id" placeholder="ID" required>
 		      		</div>
 	            <div class="form-group">
 	              <input id="password-field" type="password" class="form-control" name="password" placeholder="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
+	            
 			    <div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
 			      <span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
 			    </div>	            
@@ -74,19 +75,19 @@
           <div class="col-sm-6 mobile-pull">
             <article role="login">
               <h3 class="text-center"><i class="fa fa-lock"></i> Create User Account</h3>
-              <form action="/user" class="signup"  method="POST">
+              <form th:action="@{/user}" class="signup"  method="POST">
                <input type="radio" name="auth" value="ROLE_USER" checked="checked" style="display:none;">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="userName" placeholder="UserName" required="required">
+                  <input type="text" class="form-control" name="name" placeholder="UserName" required="required">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="userAddress" placeholder="Email Address" required="required">
+                  <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="userId" placeholder="UserId" required="required">
+                  <input type="text" class="form-control" name="id" placeholder="UserId" required="required">
                 </div>         
                 <div class="form-group">
-                  <input type="password" class="form-control" id="userPass" placeholder="Password" required="required">
+                  <input type="password" class="form-control" name="password" placeholder="Password" required="required">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control" placeholder="Confirm Password" required="required">
@@ -99,7 +100,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="submit" class="btn btn-success btn-block"  id="submit_btn" value="SUBMIT">
+                  <button type="submit" class="btn btn-success btn-block"  id="submit_btn" value="SUBMIT"></button>
                   <input type="button" class="btn btn-success btn-block" id="cancel_btn" value="CANCEL">
                 </div>
               </form>
@@ -185,6 +186,7 @@
 
 
 <script src="/js/login/login.js"></script>
+
 	<script src="/js/jquery.min.js"></script>
   <script src="/js/popper.js"></script>
   <script src="/js/bootstrap.min.js"></script>

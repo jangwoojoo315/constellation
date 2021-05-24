@@ -8,6 +8,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -23,6 +24,7 @@ public class UserController {
 	}
 	@RequestMapping(value="/login")
 	public String Main_login(){
+		
 		return "/login/login";
 	}
 	@RequestMapping(value="/admin")
@@ -33,13 +35,11 @@ public class UserController {
 	public String Signup(){
 		return "/login/signup";
 	}
-	@PostMapping(value="/user")
-	public RedirectView signup(UserInfoDto infoDto) {
-		System.out.print("111");
+	@PostMapping("/user")
+	public RedirectView signup( UserInfoDto infoDto) {
 		//회원추가
 		userService.save(infoDto);
 		return new RedirectView("/login");
-
 	}
   // 추가
 	  @GetMapping(value = "/logout")

@@ -1,10 +1,14 @@
 package com.jang.constellation.login;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.jang.constellation.signup.api.SignupRestController;
 
 import lombok.RequiredArgsConstructor;
 
@@ -14,7 +18,7 @@ public class UserService implements UserDetailsService {
 
   private final UserRepository userRepository;
   
-
+  private static final Logger Logger=LoggerFactory.getLogger(SignupRestController.class);
 
   /**
    * Spring Security 필수 메소드 구현
@@ -26,7 +30,7 @@ public class UserService implements UserDetailsService {
   public Long save(UserInfoDto infoDto) {
 	    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	    infoDto.setPassword(encoder.encode(infoDto.getPassword()));
-
+	  
 	    return userRepository.save(UserInfo.builder()
 	    	.name(infoDto.getName())
 	    	.email(infoDto.getEmail())
@@ -36,9 +40,10 @@ public class UserService implements UserDetailsService {
 	  }
 
 @Override
-public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+public UserInfo loadUserByUsername(String id) throws UsernameNotFoundException {
 	// 시큐리티에서 지정한 서비스이기 때문에 이 메소드를 필수로 구현
-    return userRepository.findByEmail(email)
-        .orElseThrow(() -> new UsernameNotFoundException((email)));
+	
+    return userRepository.findById(id)
+        .orElseThrow(() -> new UsernameNotFoundException((id)));
 }	
 }

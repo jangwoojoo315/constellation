@@ -78,32 +78,34 @@ window.onload=function(){
 		document.getElementById('profile').style.display='none';
 	});
 	
-	var signup_btn=document.getElementById('submit_btn');
-	var _userId=document.getElementById('userId');
-	var _userAddress=document.getElementById('userAddress');
-	var _userName=document.getElementById('userName');
-	var _userPass=document.getElementById('userPass');
+
 	
-	signup_btn.addEventListener('click',function(){
-		
-		submituserinfo(_userId,_userAddress,_userName,_userPass);
-	});
-	function submituserinfo(_userId,_userAddress,_userName,_userPass){
-		alert(_userId.value);
-		var url='/signup_info';
-		fetch(url,{
-			method:"POST",
-			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
-				  },
-			body:JSON.stringify(
-					{
-						userId:_userId.value,
-						userAddress:_userAddress.value,
-						userPass:_userPass.value,
-						userName:_userName.value,
-					}
-			)
-		})
-	}
+//	var signup_btn=document.getElementById('submit_btn');
+//	var _userId=document.getElementById('userId');
+//	var _userAddress=document.getElementById('userAddress');
+//	var _userName=document.getElementById('userName');
+//	var _userPass=document.getElementById('userPass');
+//	
+//	signup_btn.addEventListener('click',function(){
+//		
+//		submituserinfo(_userId,_userAddress,_userName,_userPass);
+//	});
+//	function submituserinfo(_userId,_userAddress,_userName,_userPass){
+//		alert(_userId.value);
+//		var url='/signup_info';
+//		fetch(url,{
+//			method:"POST",
+//			headers: {
+//				'Content-Type': 'application/json;charset=utf-8'
+//				  },
+//			body:JSON.stringify(
+//					{
+//						userId:_userId.value,
+//						userAddress:_userAddress.value,
+//						userPass:_userPass.value,
+//						userName:_userName.value,
+//					}
+//			)
+//		})
+//	}
 }

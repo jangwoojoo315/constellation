@@ -29,12 +29,12 @@ public class UserInfo implements UserDetails {
   @Column(name = "code")
   @GeneratedValue(strategy= GenerationType.IDENTITY)
   private Long code;
-  @Column(name = "id")
+  @Column(name = "id", unique = true)
   private String id;
   @Column(name = "name")
   private String name;
   
-  @Column(name = "email", unique = true)
+  @Column(name = "email")
   private String email;
 
   @Column(name = "password")
@@ -71,7 +71,7 @@ public class UserInfo implements UserDetails {
   // 사용자의 id를 반환 (unique한 값)
   @Override
   public String getUsername() {
-    return email;
+    return id;
   }
 
   // 사용자의 password를 반환
