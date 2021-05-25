@@ -1,5 +1,7 @@
 package com.jang.constellation.login;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -38,12 +40,18 @@ public class UserService implements UserDetailsService {
 	    	.id(infoDto.getId())
 	        .password(infoDto.getPassword()).build()).getCode();
 	  }
-
-@Override
-public UserInfo loadUserByUsername(String id) throws UsernameNotFoundException {
-	// 시큐리티에서 지정한 서비스이기 때문에 이 메소드를 필수로 구현
-	
-    return userRepository.findById(id)
-        .orElseThrow(() -> new UsernameNotFoundException((id)));
-}	
+  public void selectUserInfo(String id) {
+	  Optional<UserInfo> user=userRepository.findById(id);
+	  user.ifPresent(selectUser ->{
+		  System.out.print("user: "+selectUser);
+	  });
+	  
+  }
+	@Override
+	public UserInfo loadUserByUsername(String id) throws UsernameNotFoundException {
+		// 시큐리티에서 지정한 서비스이기 때문에 이 메소드를 필수로 구현
+		
+	    return userRepository.findById(id)
+	        .orElseThrow(() -> new UsernameNotFoundException((id)));
+	}	
 }

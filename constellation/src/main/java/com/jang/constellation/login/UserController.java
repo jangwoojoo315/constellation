@@ -47,4 +47,9 @@ public class UserController {
 	    new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
 	    return "redirect:/login";
 	  }
+	@RequestMapping(value="/user_info")
+	public String User_info(){
+		return "/login/user_info";
+	}	  
+  
 }
